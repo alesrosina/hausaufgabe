@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title>
+    Demo
+  </title>
+</head>
+<body>
+
+<h1>Simple demo for navigation menu</h1>
+
+<p>
+  I have used SASS and Grunt for easier creation of CSS, where I have used some helper tools:
+</p>
+<ul>
+  <li><b>Autoprefixer</b>: Prefixes all css properties, that are not covered by default in given browsers</li>
+  <li><b>Cssnano</b>: Minimizing CSS file (removing all comments, whitespaces, etc.)</li>
+  <li><b>SASS</b>: CSS precompiler.</li>
+  <li><b>Normalize.css</b>: Used for normalizing all DOM elements for various browsers.</li>
+  <li><b>include-media</b>: SCSS mixins for media queries.</li>
+</ul>
+
+<p>
+  For mobile I have chosen a solution, where a user would have a back button and current step. It does indicate
+  which step user is currently visiting and allows a user to go back, but a downside of this approach is, that a user
+  does not see how many steps are in front of him.<br/>
+  This might be solved by using "accordion style" (see image below) of navigation, where a user would see how many steps there are, and
+  could also navigate around steps.<br/>
+  Both solutions works on different use cases, so it really depends on actual use case of this example.<br/>
+  I have also choose a solution with back button due to time constraint, since accordion solution would require a bit more
+  brainstorming on how to achieve it with not too much of messing with clean HTML.
+
+</p>
+
+<h2>Desktop</h2>
+
+<iframe src="html/step-navigation.html" width="1024" height="100" frameborder="1"></iframe>
+
+<h2>Tablet</h2>
+
+<iframe src="html/step-navigation.html" width="768" height="100" frameborder="1"></iframe>
+
+<h2>Mobile</h2>
+
+<iframe src="html/step-navigation.html" width="320" height="100" frameborder="1"></iframe>
+
+<h3>Possible accordion solution for mobile</h3>
+
+<img src="img/accordion.png" alt="Accordion style solution">
+
+
+</body>
+</html>
+
+

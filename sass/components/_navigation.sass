@@ -1,0 +1,123 @@
+.navigation
+  border-top: 1px solid $gray-light
+  background: $gray-lighter
+  //height: 66px
+  color: $gray
+  overflow: hidden
+  position: relative
+
+  &:after
+    // this is a hack for overflow & border for bottom "arrow" on active element
+    content: ""
+    background: $gray-light
+    height: 1px
+    width: 100%
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: 0
+
+.step-navigation
+  display: table
+  width: 900px
+  list-style: none
+  counter-reset: section
+  margin: 0 auto
+  padding: 0 20px
+  @extend %clearfix
+
+  +media("<desktop")
+    width: calc(100% - 40px)
+
+  +media("<=tablet")
+    width: 100%
+    padding: 0
+
+  li
+    position: relative
+    display: table-cell
+    vertical-align: middle
+    margin: 0
+    padding: 20px 0
+    border-left: 1px solid $gray-light
+    text-align: center
+    counter-increment: section
+    cursor: pointer
+    box-sizing: border-box
+
+    +media("<=tablet")
+      +fake-display-none
+
+    &:before
+      content: counter(section)
+      font-size: 12px
+      display: inline-block
+      border: 2px solid $gray
+      border-radius: 14px
+      background-color: white
+      width: 24px
+      height: 24px
+      line-height: 24px
+      margin-right: 6px
+
+      +media("<desktop", ">tablet")
+        display: block
+        margin: 0 auto 6px auto
+
+    &:hover
+      background: $gray-light
+
+    &:last-of-type
+      border-right: 1px solid $gray-light
+
+    &.done
+      &:before
+        border-color: $green
+        color: transparent
+        background-image: url("../img/icon-checked-green.png")
+        background-repeat: no-repeat
+        background-position: 50%
+        background-size: 17px 17px
+
+      +media("retina2x")
+        &:before
+          background-image: url("../img/icon-checked-green-2x.png")
+
+    &.active
+      color: $gray-dark
+
+      +media("<=tablet")
+        //display: table-cell
+        +fake-display-normal
+
+      &:before
+        background: $gray-dark
+        border-color: $gray-dark
+        color: white
+
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        bottom: -7px
+        left: 50%
+        width: 10px
+        height: 10px
+        border: 1px solid $gray-light
+        background: $main-background
+        transform: translateX(-50%) rotate(45deg)
+        z-index: 10
+
+    &.back
+      display: none
+      counter-increment: none
+      border: 0
+
+      &:before
+        content: "<"
+
+      +media("<=tablet")
+        display: table-cell
+        +fake-display-normal
+
+
