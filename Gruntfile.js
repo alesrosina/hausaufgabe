@@ -30,7 +30,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: 'css/*.css',
+        src: ['css/*.css', '!css/*.min.css'],
         dest: 'css/style.min.css'
       }
     },
